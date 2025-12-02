@@ -2,19 +2,12 @@
 <img width="1200" height="475" alt="GHBanner" src="https://www.esmaior.pt/esmaior/images/simbolologo_grande.png" />
 </div>
 
-# Run and deploy your AI Studio app
+# Maior AI
 
-This contains everything you need to run your app locally.
+O Assistente Virtual para qualquer Estudante da Maior
 
-View your app in AI Studio: https://ai.studio/apps/drive/12w4aYfGSyDGlKIG0f9wKTdb1BZpdlAel
+Visite o nosso site: https://www.esmaior.pt/esmaior
 
-## Run Locally
+* Feito por um Estudante do 12.º ano :)
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Qualquer Dúvida contacte o dono do repositório.
