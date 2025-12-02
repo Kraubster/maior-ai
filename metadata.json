@@ -1,0 +1,8 @@
+{
+  "name": "Maior AI",
+  "description": "O teu assistente de estudo pessoal e especialista em educação portuguesa, focado em ajudar estudantes a dominar matérias e testes.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

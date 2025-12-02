@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Professor Tozé 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: #28282B;
+        color: #FFFFFF;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4A4A4A;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5A5A5A;
+      }
+      .typing-dot {
+        animation: typing 1.4s infinite ease-in-out both;
+      }
+      .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+      .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+      
+      @keyframes typing {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1); }
+      }
+      
+      /* Intermittent Running Aura (Gradient Border) */
+      @keyframes running-gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Standard Mode Aura - #BA2D27 */
+      .animate-running-aura-standard {
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), rgba(186, 45, 39, 0.6), rgba(255,255,255,0.05), transparent);
+        background-size: 200% 100%;
+        animation: running-gradient 3s linear infinite;
+      }
+
+      /* Giga Mode Aura - #702963 */
+      .animate-running-aura-giga {
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), rgba(112, 41, 99, 0.8), rgba(255,255,255,0.05), transparent);
+        background-size: 200% 100%;
+        animation: running-gradient 3s linear infinite;
+      }
+
+      /* Crystalline Pulse for Send Button */
+      @keyframes crystalline-pulse {
+        0% { 
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); 
+          transform: scale(1);
+          filter: brightness(1);
+        }
+        50% { 
+          box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2); 
+          transform: scale(0.95);
+          filter: brightness(1.3) contrast(1.1);
+        }
+        100% { 
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); 
+          transform: scale(1);
+          filter: brightness(1);
+        }
+      }
+      
+      /* Reflection Sweep Animation */
+      @keyframes reflection-sweep {
+        0% { left: -100%; opacity: 0; }
+        20% { opacity: 1; }
+        100% { left: 200%; opacity: 0; }
+      }
+
+      .animate-reflection {
+        animation: reflection-sweep 0.6s ease-out forwards;
+      }
+
+      .crystalline-active:active {
+        animation: crystalline-pulse 0.4s ease-out forwards;
+      }
+      
+      .animate-crystalline-trigger {
+        animation: crystalline-pulse 0.6s ease-out forwards;
+      }
+
+      /* Shimmer effect for Tira 20s button */
+      @keyframes shimmer {
+        100% {
+          left: 200%;
+        }
+      }
+
+      /* "Pretty" outline animation for Tira 20s - Neon/Electric feel */
+      @keyframes pretty-outline {
+        0% { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0), 0 0 0 0px rgba(188, 42, 36, 0); border-color: rgba(255, 255, 255, 0.2); }
+        50% { box-shadow: 0 0 10px 0px rgba(188, 42, 36, 0.2), 0 0 5px 1px rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.6); }
+        100% { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0), 0 0 0 0px rgba(188, 42, 36, 0); border-color: rgba(255, 255, 255, 0.2); }
+      }
+      
+      .animate-pretty-outline {
+        animation: pretty-outline 2.5s infinite ease-in-out;
+      }
+
+      /* Red Wave Animation for Placeholder */
+      @keyframes placeholder-red-wave {
+        0%, 100% { 
+          color: rgba(255, 255, 255, 0.3); 
+          opacity: 0.5;
+        }
+        50% { 
+          color: rgba(188, 42, 36, 0.7); /* Theme Red */
+          opacity: 0.9;
+        }
+      }
+      
+      .placeholder-wave-red::placeholder {
+        animation: placeholder-red-wave 4s ease-in-out infinite;
+        transition: color 0.3s ease;
+      }
+
+      /* Giga Bubble Float & Pop Animation - ERRATIC */
+      @keyframes giga-bubble-erratic {
+        0% {
+          transform: translateX(0) translateY(0) scale(0.5);
+          opacity: 0;
+        }
+        15% {
+          opacity: 0.6;
+          transform: translateX(-6px) translateY(-8vh) scale(0.7);
+        }
+        40% {
+          transform: translateX(6px) translateY(-18vh) scale(0.8);
+        }
+        70% {
+          opacity: 0.5;
+          transform: translateX(-4px) translateY(-28vh) scale(1.0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(2px) translateY(-35vh) scale(1.4);
+        }
+      }
+
+      /* Message Entrance Animation - Ascending Scale Up */
+      @keyframes message-enter {
+        0% {
+          opacity: 0;
+          transform: translateY(30px) scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .animate-message-enter {
+        animation: message-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Giga Chat Bubble Pulse Glow */
+      @keyframes giga-chat-pulse {
+        0%, 100% { 
+          box-shadow: 0 0 10px -2px rgba(168, 85, 247, 0.2);
+          border-color: rgba(168, 85, 247, 0.3);
+        }
+        50% { 
+          box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.5);
+          border-color: rgba(168, 85, 247, 0.6);
+        }
+      }
+
+      .animate-giga-chat-pulse {
+        animation: giga-chat-pulse 4s infinite ease-in-out;
+      }
+      
+      /* Mobile optimization */
+      input, textarea, button, select, a {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
