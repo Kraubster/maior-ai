@@ -32,7 +32,8 @@ export const generateResponse = async ({
   const ai = new GoogleGenAI({ apiKey: API_KEY });
   
   let config: any = {
-    systemInstruction: PROFESSOR_MAIOR_SYSTEM_INSTRUCTION,
+    systemInstruction: PROFESSOR_MAIOR_SYSTEM_INSTRUCTION
+    maxOutputTokens: 512,
   };
 
   let selectedModel = MODEL_FLASH;
