@@ -148,7 +148,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <div>
               <h1 className="text-lg font-bold leading-tight tracking-tight text-white transition-all duration-300">
-                {mode === 'giga' ? 'Prof. Tozé (GIGA)' : 'Prof. Tozé 2.0'}
+                {mode === 'giga' ? 'Prof. GIGANTE' : 'Prof. Maior'}
               </h1>
             </div>
           </div>
